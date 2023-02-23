@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NET_Project.Data;
+using AithTest.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
