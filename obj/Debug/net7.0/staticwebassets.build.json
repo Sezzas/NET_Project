@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "A7Vt2h5QNSGngXi3LEBB0qoIwuK+8WAAp6T9vnjUpDE=",
+  "Hash": "BSDuIIrBL8gpJak2SHgOUcT3yePwM3Uq+fI3o2nxhUk=",
   "Source": "NET_Project",
   "BasePath": "_content/NET_Project",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\header.png",
+      "SourceId": "NET_Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\",
+      "BasePath": "_content/NET_Project",
+      "RelativePath": "header.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\header.png"
     },
     {
       "Identity": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\js\\site.js",
