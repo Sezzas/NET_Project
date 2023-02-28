@@ -18,7 +18,21 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Privacy()
+    [Route("/omsso")]
+    public IActionResult About()
+    {
+        return View();
+    }
+
+    [Route("/dinahästar")]
+    public IActionResult Horses()
+    {
+
+        return View();
+    }
+
+    [Route("/anteckningar")]
+    public IActionResult Notes()
     {
         return View();
     }

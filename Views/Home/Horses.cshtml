@@ -1,0 +1,80 @@
+@using NET_Project.Models
+@{
+    ViewData["Title"] = "Dina hästar";
+}
+
+<h2>Dina hästar</h2>
+
+<p>Här kan du lagra information om dina hästar!</p>
+
+<h2>Lägg till häst</h2>
+<!-- Formulär för att lägga till hästar -->
+<!-- <form method="post" id="horse-form">
+
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="form-box">
+        <label asp-for="HorseName">Namn:</label><br />
+        <input asp-for="HorseName"><br />
+    </div>
+
+    <div class="form-box">
+        <label asp-for="HorseNickname">Smeknamn:</label><br />
+        <input asp-for="HorseNickname">
+    </div>
+
+    <div class="form-box">
+        <label asp-for="HorseGender">Kön:</label><br />
+        <select asp-for="HorseGender">
+            <option value="Sto">Sto</option>
+            <option value="Hingst">Hingst</option>
+            <option value="Valack">Valack</option>
+        </select><br />
+    </div>
+
+    <div class="form-box">
+        <label asp-for="HorseBreed">Ras:</label><br />
+        <input asp-for="HorseBreed">
+    </div>
+
+    <div class="form-box">
+        <label asp-for="HorseLevel">Level:</label><br />
+        <input asp-for="HorseLevel">
+    </div>
+
+    <div class="form-box submit-btn">
+        <input type="submit" value="Lägg till">
+    </div>
+
+    <div class="validation-msg">
+        <span asp-validation-for="HorseName"></span><br/>
+        <span asp-validation-for="HorseBreed"></span><br/>
+        <span asp-validation-for="HorseLevel"></span><br/>
+    </div>
+
+</form><br /> -->
+
+<h2>Lagrade hästar</h2>
+<!-- Tabell för att skriva ut hästar -->
+<table id="horse-table">
+
+    <!-- Tabell header -->
+    <thead>
+        <tr>
+            <th>Nummer</th>
+            <th>Bild</th>
+            <th>Namn</th>
+            <th>Smeknamn</th>
+            <th>Kön</th>
+            <th>Ras</th>
+            <th>Level</th>
+            <th>Info</th>
+        </tr>
+    </thead>
+
+    <!-- Skriva ut alla hästar -->
+    <tbody>
+
+    </tbody>
+
+</table>
