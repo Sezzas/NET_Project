@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -17,14 +21,16 @@
     <div id="container">
 
         <header>
-            <h1>My SSO</h1>
+            <a asp-area="" asp-controller="Home" asp-action="Index" id="header-link"><h1>My SSO</h1></a>
         </header>
 
         <nav>
             <a asp-area="" asp-controller="Home" asp-action="Index">Startsida</a>
             <a asp-area="" asp-controller="Home" asp-action="About">Om SSO</a>
-            <a asp-area="" asp-controller="Home" asp-action="Horses">Dina hästar</a>
-            <a asp-area="" asp-controller="Home" asp-action="Notes">Anteckningar</a>
+            @if (SignInManager.IsSignedIn(User)) {
+                <a asp-area="" asp-controller="Home" asp-action="Horses">Dina hästar</a>
+                <a asp-area="" asp-controller="Home" asp-action="Notes">Anteckningar</a>
+            }
         </nav>
 
         <partial name="_LoginPartial" />

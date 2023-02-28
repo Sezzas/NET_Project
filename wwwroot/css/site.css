@@ -56,6 +56,10 @@ header h1 {
   color: white;
 }
 
+#header-link {
+  text-decoration: none;
+}
+
 nav {
   background-color: #231e1e;
   padding: 1em;
@@ -92,6 +96,10 @@ h1, h2, h3, h4 {
 h2 {
   color: #e53bb9;
   font-size: 1.8em;
+}
+
+h3 {
+  font-size: 1.4em;
 }
 
 p, i, em, strong, b {
@@ -155,7 +163,7 @@ td {
   text-align: center;
 }
 
-form {
+#horse-form {
   font-family: 'Noto Sans', sans-serif;
   width: 100%;
   max-width: 700px;
@@ -164,11 +172,32 @@ form {
   column-gap: 30px;
 }
 
-input[type=text], input[type=number], select {
+#register-form, #login-form {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.form-floating {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.form-floating label {
+  font-weight: bold;
+}
+
+#login-links a {
+  font-style: italic;
+}
+
+input[type=text], input[type=number], select, input[type=email], input[type=password] {
   padding: 0.5em;
   width: 300px;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
+}
+
+input[type=checkbox] {
+  margin-bottom: 1em;
 }
 
 select {
@@ -185,6 +214,16 @@ input[type=submit] {
 
 .submit-btn {
   align-self: flex-end;
+  padding: 0.7em;
+  background-color: #e53bb9;
+  color: white;
+  border: none;
+  font-family: 'Fugaz One', sans-serif;
+}
+
+.submit-btn:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .validation-msg {
@@ -199,10 +238,54 @@ input[type=submit] {
   display: flex;
   gap: 30px;
   font-family: 'Noto Sans', sans-serif;
+  background-color: #f9f4ec;
+  align-items: center;
+  padding-left: 1em;
 }
 
 .nav-item {
   list-style-type: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #231e1e;
+}
+
+.pink-highlight {
+  color: #e53bb9;
+}
+
+.pink-highlight:hover {
+  font-weight: bold;
+}
+
+.btn-link {
+  padding: 0.5em;
+  background-color: #e53bb9;
+  color: white;
+  border: none;
+  font-family: 'Fugaz One', sans-serif;
+}
+
+.btn-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pink-link {
+  font-family: 'Fugaz One', sans-serif;
+  color: #e53bb9;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.pink-link:hover {
+  text-decoration: underline;
+}
+
+.small-text {
+  font-size: 0.9em;
 }
 
 /* För mobila enheter */
