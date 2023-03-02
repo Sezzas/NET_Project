@@ -79,6 +79,23 @@ public class HomeController : Controller
         }
     }
 
+    public IActionResult Delete(int id, string category)
+    {
+        using (var client = new HttpClient()) {
+            client.BaseAddress = new Uri("http://localhost:5154/api/");
+
+            var deleteTask = client.DeleteAsync(category + "/" + id.ToString());
+            deleteTask.Wait();
+
+            var result = deleteTask.Result;
+            if(result.IsSuccessStatusCode) {
+                return RedirectToAction(category + "s");
+            }
+        }
+
+        return RedirectToAction(category + "s");
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

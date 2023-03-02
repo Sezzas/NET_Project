@@ -18675,6 +18675,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\Views\\Home\\Delete.cshtml",
+      "TargetPath": "Views\\Home\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\Views\\Home\\Notes.cshtml",
       "TargetPath": "Views\\Home\\Notes.cshtml",
       "FileKind": "mvc"

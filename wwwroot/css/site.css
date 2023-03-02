@@ -194,10 +194,14 @@ input[type=text], input[type=number], select, input[type=email], input[type=pass
   width: 300px;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
+  font-family: 'Noto Sans', sans-serif;
 }
 
 textarea {
   width: 500px;
+  height: 150px;
+  font-family: 'Noto Sans', sans-serif;
+  white-space: pre-wrap;
 }
 
 input[type=checkbox] {
@@ -290,6 +294,12 @@ input[type=submit] {
 
 .small-text {
   font-size: 0.9em;
+}
+
+.note-box {
+  border-bottom: 1px solid #d3d3d3;
+  max-width: 600px;
+  padding-bottom: 1em;
 }
 
 /* För mobila enheter */

@@ -15,12 +15,12 @@
 <form method="post" id="notes-form">
 
     <div class="form-box">
-        @Html.LabelFor(model => model.Title)
+        @Html.LabelFor(model => model.Title) <br />
         @Html.EditorFor(model => model.Title)
     </div>
 
     <div class="form-box">
-        @Html.LabelFor(model => model.Content)
+        @Html.LabelFor(model => model.Content) <br />
         @Html.EditorFor(model => model.Content)
     </div>
 
@@ -34,9 +34,12 @@
 
 @foreach(var note in data) {
 
-    <div>
+    <div class="note-box">
         <h3>@note.NoteId . @note.Title</h3>
         <p>@note.Content</p>
+        <div>
+            <button>@Html.ActionLink("Radera", "Delete", new { id=note.NoteId, category="Note" })</button>
+        </div>
     </div>
 
 }

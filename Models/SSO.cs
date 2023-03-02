@@ -38,10 +38,12 @@ namespace NET_Project.Models {
         public int NoteId { get; set; } // ID
 
         [Required]
+        [Display(Name = "Titel")]
         public string? Title { get; set; } // Title
 
         [Required]
-        [DataType(DataType.Text)]
+        [DataType(DataType.MultilineText)]
+        [Display(Name = "Anteckning")]
         public string? Content { get; set; } // Content
 
     }
