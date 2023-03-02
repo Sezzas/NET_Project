@@ -302,6 +302,29 @@ input[type=submit] {
   padding-bottom: 1em;
 }
 
+.delete-btn {
+  padding: 0.5em;
+  background-color: #f9f4ec;
+  color: #e53bb9 !important;
+  border: none;
+  font-family: 'Fugaz One', sans-serif;
+  font-weight: normal !important;
+  font-size: 0.8em;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  color: #231e1e !important;
+  cursor: pointer;
+  text-decoration: none !important;
+  background-color: #f1ece3;
+}
+
+.button-box {
+  margin-top: 2em;
+}
+
+
 /* För mobila enheter */
 @media (max-width: 600px) {
 

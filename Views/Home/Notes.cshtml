@@ -37,8 +37,8 @@
     <div class="note-box">
         <h3>@note.NoteId . @note.Title</h3>
         <p>@note.Content</p>
-        <div>
-            <button>@Html.ActionLink("Radera", "Delete", new { id=note.NoteId, category="Note" })</button>
+        <div class="button-box">
+            @Html.ActionLink("Radera", "Delete", new { id=note.NoteId, category="Note" }, new { @class="delete-btn" })
         </div>
     </div>
 
