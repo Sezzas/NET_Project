@@ -54,13 +54,29 @@ public class HomeController : Controller
             }
         }
 
-        return View(notes);
+        ViewBag.Notes = notes;
+
+        return View();
     }
 
     [HttpPost("/anteckningar")]
-    public IActionResult Notes(Horse model)
+    public IActionResult Notes(Note note)
     {
-        return View();
+        using (var client = new HttpClient()) {
+            client.BaseAddress = new Uri("http://localhost:5154/api/note");
+
+            var postTask = client.PostAsJsonAsync<Note>("note", note);
+            postTask.Wait();
+
+            var result = postTask.Result;
+            if(result.IsSuccessStatusCode) {
+                return RedirectToAction("Notes");
+            }
+
+            ModelState.AddModelError(string.Empty, "Something went wrong.");
+
+            return View(note);
+        }
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
