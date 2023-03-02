@@ -172,7 +172,7 @@ td {
   column-gap: 30px;
 }
 
-#register-form, #login-form {
+#register-form, #login-form, #notes-form {
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -189,11 +189,15 @@ td {
   font-style: italic;
 }
 
-input[type=text], input[type=number], select, input[type=email], input[type=password] {
+input[type=text], input[type=number], select, input[type=email], input[type=password], textarea {
   padding: 0.5em;
   width: 300px;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
+}
+
+textarea {
+  width: 500px;
 }
 
 input[type=checkbox] {

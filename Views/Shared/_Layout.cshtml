@@ -27,7 +27,7 @@
         <nav>
             <a asp-area="" asp-controller="Home" asp-action="Index">Startsida</a>
             <a asp-area="" asp-controller="Home" asp-action="About">Om SSO</a>
-            @if (SignInManager.IsSignedIn(User)) {
+            @if (SignInManager.IsSignedIn(User)) { // Only show if logged in
                 <a asp-area="" asp-controller="Home" asp-action="Horses">Dina hästar</a>
                 <a asp-area="" asp-controller="Home" asp-action="Notes">Anteckningar</a>
             }

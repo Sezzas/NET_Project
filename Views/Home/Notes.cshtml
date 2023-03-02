@@ -1,7 +1,40 @@
 @{
+    @model IEnumerable<NET_Project.Models.Note>
     ViewData["Title"] = "Anteckningar";
 }
 
 <h2>Anteckningar</h2>
 
 <p>Spara dina anteckningar här!</p>
+
+<h2>Lägg till anteckning</h2>
+
+<!-- Form for notes -->
+<form method="post" id="notes-form">
+
+    <div class="form-box">
+        <label for="Title">Titel:</label><br />
+        <input type="text" name="Title" id="Title"><br />
+    </div>
+
+    <div class="form-box">
+        <label for="Content">Anteckning:</label><br />
+        <textarea id="Content" Name="Content" rows="7"></textarea><br />
+
+        <div class="form-box">
+            <input type="submit" value="Skapa anteckning" class="submit-btn">
+        </div>
+    </div>
+
+</form>
+
+<h2>Sparade anteckningar</h2>
+
+@foreach(var note in Model) {
+
+    <div>
+        <h3>@note.NoteId . @note.Title</h3>
+        <p>@note.Content</p>
+    </div>
+
+}

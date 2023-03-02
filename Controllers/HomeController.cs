@@ -34,6 +34,32 @@ public class HomeController : Controller
     [Route("/anteckningar")]
     public IActionResult Notes()
     {
+        IEnumerable<Note> notes = null;
+
+        using (var client = new HttpClient()) {
+
+            client.BaseAddress = new Uri("http://localhost:5154/api/");
+            var responseTask = client.GetAsync("note");
+            responseTask.Wait();
+
+            var result = responseTask.Result;
+            if(result.IsSuccessStatusCode) {
+                var readTask = result.Content.ReadAsAsync<IList<Note>>();
+
+                notes = readTask.Result;
+            } else {
+                notes = Enumerable.Empty<Note>();
+
+                ModelState.AddModelError(string.Empty, "Something went wrong.");
+            }
+        }
+
+        return View(notes);
+    }
+
+    [HttpPost("/anteckningar")]
+    public IActionResult Notes(Horse model)
+    {
         return View();
     }
 
