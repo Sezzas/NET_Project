@@ -1,6 +1,7 @@
-@using NET_Project.Models
 @{
     ViewData["Title"] = "Dina hästar";
+
+    var data = ViewBag.Horses;
 }
 
 <h2>Dina hästar</h2>
@@ -55,10 +56,10 @@
 </form><br /> -->
 
 <h2>Lagrade hästar</h2>
-<!-- Tabell för att skriva ut hästar -->
+<!-- Table to print horses -->
 <table id="horse-table">
 
-    <!-- Tabell header -->
+    <!-- Table header -->
     <thead>
         <tr>
             <th>Nummer</th>
@@ -72,9 +73,22 @@
         </tr>
     </thead>
 
-    <!-- Skriva ut alla hästar -->
+    <!-- Loop through horses -->
     <tbody>
+        @foreach(var horse in data) {
 
+            <tr>
+                <td>@horse.HorseId</td>
+                <td></td>
+                <td>@horse.Name</td>
+                <td>@horse.Nickname</td>
+                <td>@horse.Gender</td>
+                <td>@horse.Breed</td>
+                <td>@horse.Level</td>
+                <td>@horse.Info</td>
+            </tr>
+
+        }
     </tbody>
 
 </table>

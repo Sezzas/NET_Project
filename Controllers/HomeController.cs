@@ -27,6 +27,27 @@ public class HomeController : Controller
     [Route("/dinahästar")]
     public IActionResult Horses()
     {
+        IEnumerable<Horse> horses = null;
+
+        using (var client = new HttpClient()) {
+
+            client.BaseAddress = new Uri("http://localhost:5154/api/");
+            var responseTask = client.GetAsync("horse");
+            responseTask.Wait();
+
+            var result = responseTask.Result;
+            if(result.IsSuccessStatusCode) {
+                var readTask = result.Content.ReadAsAsync<IList<Horse>>();
+
+                horses = readTask.Result;
+            } else {
+                horses = Enumerable.Empty<Horse>();
+
+                ModelState.AddModelError(string.Empty, "Something went wrong.");
+            }
+        }
+
+        ViewBag.Horses = horses;
 
         return View();
     }
