@@ -79,6 +79,47 @@ public class HomeController : Controller
         }
     }
 
+    public IActionResult Edit(int id)
+    {
+        Note note = null;
+
+        using (var client = new HttpClient()) {
+            client.BaseAddress = new Uri("http://localhost:5154/api/note/");
+
+            var responseTask = client.GetAsync(id.ToString());
+            responseTask.Wait();
+
+            var result = responseTask.Result;
+
+            if(result.IsSuccessStatusCode) {
+                var readTask = result.Content.ReadAsAsync<Note>();
+                readTask.Wait();
+
+                note = readTask.Result;
+            }
+        }
+
+        return View(note);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(Note note)
+    {
+        using (var client = new HttpClient()) {
+            client.BaseAddress = new Uri("http://localhost:5154/api/note");
+
+            var putTask = client.PutAsJsonAsync<Note>("note", note);
+            putTask.Wait();
+
+            var result = putTask.Result;
+            if(result.IsSuccessStatusCode) {
+                return RedirectToAction("Notes");
+            }
+        }
+
+        return View(note);
+    }
+
     public IActionResult Delete(int id, string category)
     {
         using (var client = new HttpClient()) {

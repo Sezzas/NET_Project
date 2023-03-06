@@ -191,14 +191,16 @@ td {
 
 input[type=text], input[type=number], select, input[type=email], input[type=password], textarea {
   padding: 0.5em;
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   margin-top: 0.2em;
   margin-bottom: 0.5em;
   font-family: 'Noto Sans', sans-serif;
 }
 
 textarea {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: 150px;
   font-family: 'Noto Sans', sans-serif;
   white-space: pre-wrap;
@@ -302,7 +304,7 @@ input[type=submit] {
   padding-bottom: 1em;
 }
 
-.delete-btn {
+.edit-btn {
   padding: 0.5em;
   background-color: #f9f4ec;
   color: #e53bb9 !important;
@@ -313,11 +315,27 @@ input[type=submit] {
   transition: 0.3s;
 }
 
-.delete-btn:hover {
+.delete-btn {
+  padding: 0.5em;
+  color: #231e1e !important;
+  border: none;
+  font-family: 'Fugaz One', sans-serif;
+  font-weight: normal !important;
+  font-size: 0.7em;
+  transition: 0.3s;
+}
+
+.edit-btn:hover {
   color: #231e1e !important;
   cursor: pointer;
   text-decoration: none !important;
   background-color: #f1ece3;
+}
+
+.delete-btn:hover {
+  color: #e53bb9 !important;
+  cursor: pointer;
+  text-decoration: none !important;
 }
 
 .button-box {
@@ -334,5 +352,9 @@ input[type=submit] {
 
   table {
     font-size: 0.7em;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
   }
 }

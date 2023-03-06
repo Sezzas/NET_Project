@@ -1,0 +1,26 @@
+@{
+    @model NET_Project.Models.Note;
+    ViewData["Title"] = "Ändra anteckning";
+}
+
+<h2>Ändra anteckning</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "notes-form" }))
+{
+
+    <div class="form-box">
+        @Html.LabelFor(model => model.Title) <br />
+        @Html.EditorFor(model => model.Title)
+    </div>
+
+    <div class="form-box">
+        @Html.LabelFor(model => model.Content) <br />
+        @Html.EditorFor(model => model.Content)
+    </div>
+
+    <div class="form-box">
+        <input type="submit" value="Spara ändringar" class="submit-btn">
+    </div>
+
+}
+

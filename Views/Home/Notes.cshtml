@@ -32,12 +32,14 @@
 
 <h2>Sparade anteckningar</h2>
 
+<!-- Loop through notes -->
 @foreach(var note in data) {
 
     <div class="note-box">
         <h3>@note.NoteId . @note.Title</h3>
         <p>@note.Content</p>
         <div class="button-box">
+            @Html.ActionLink("Ändra", "Edit", new { id=note.NoteId }, new { @class="edit-btn" })
             @Html.ActionLink("Radera", "Delete", new { id=note.NoteId, category="Note" }, new { @class="delete-btn" })
         </div>
     </div>
