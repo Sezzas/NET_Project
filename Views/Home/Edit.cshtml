@@ -5,8 +5,13 @@
 
 <h2>Ändra anteckning</h2>
 
-@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "notes-form" }))
+@using (Html.BeginForm(new { id = "notes-form" }))
 {
+
+    @Html.AntiForgeryToken()
+    
+    @Html.ValidationSummary(true, "")
+    @Html.HiddenFor(model => model.NoteId)
 
     <div class="form-box">
         @Html.LabelFor(model => model.Title) <br />

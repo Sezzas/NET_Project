@@ -1,4 +1,5 @@
 @{
+    @model NET_Project.Models.Horse;
     ViewData["Title"] = "Dina hästar";
 
     var data = ViewBag.Horses;
@@ -10,23 +11,29 @@
 
 <h2>Lägg till häst</h2>
 <!-- Formulär för att lägga till hästar -->
-<!-- <form method="post" id="horse-form">
+<form method="post" id="horse-form">
 
     <div asp-validation-summary="ModelOnly"></div>
 
     <div class="form-box">
-        <label asp-for="HorseName">Namn:</label><br />
-        <input asp-for="HorseName"><br />
+        <label asp-for="Owner">Ditt namn:</label><br />
+        <input asp-for="Owner"><br />
+    </div>
+    <span asp-validation-for="Owner"></span>
+
+    <div class="form-box">
+        <label asp-for="Name">Namn:</label><br />
+        <input asp-for="Name"><br />
     </div>
 
     <div class="form-box">
-        <label asp-for="HorseNickname">Smeknamn:</label><br />
-        <input asp-for="HorseNickname">
+        <label asp-for="Nickname">Smeknamn:</label><br />
+        <input asp-for="Nickname">
     </div>
 
     <div class="form-box">
-        <label asp-for="HorseGender">Kön:</label><br />
-        <select asp-for="HorseGender">
+        <label asp-for="Gender">Kön:</label><br />
+        <select asp-for="Gender">
             <option value="Sto">Sto</option>
             <option value="Hingst">Hingst</option>
             <option value="Valack">Valack</option>
@@ -34,26 +41,25 @@
     </div>
 
     <div class="form-box">
-        <label asp-for="HorseBreed">Ras:</label><br />
-        <input asp-for="HorseBreed">
+        <label asp-for="Breed">Ras:</label><br />
+        <input asp-for="Breed">
     </div>
 
     <div class="form-box">
-        <label asp-for="HorseLevel">Level:</label><br />
-        <input asp-for="HorseLevel">
+        <label asp-for="Level">Level:</label><br />
+        <input asp-for="Level">
     </div>
 
-    <div class="form-box submit-btn">
-        <input type="submit" value="Lägg till">
+    <div class=form-box>
+        <label asp-for="Info">Anteckning:</label><br />
+        <textarea asp-for="Info"></textarea>
     </div>
 
-    <div class="validation-msg">
-        <span asp-validation-for="HorseName"></span><br/>
-        <span asp-validation-for="HorseBreed"></span><br/>
-        <span asp-validation-for="HorseLevel"></span><br/>
+    <div class="form-box">
+        <input type="submit" value="Lägg till" class="submit-btn">
     </div>
 
-</form><br /> -->
+</form><br />
 
 <h2>Lagrade hästar</h2>
 <!-- Table to print horses -->

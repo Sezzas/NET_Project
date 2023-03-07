@@ -52,6 +52,26 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpPost("/dinahästar")]
+    public IActionResult Horses(Horse horse)
+    {
+        using (var client = new HttpClient()) {
+            client.BaseAddress = new Uri("http://localhost:5154/api/horse");
+
+            var postTask = client.PostAsJsonAsync<Horse>("horse", horse);
+            postTask.Wait();
+
+            var result = postTask.Result;
+            if(result.IsSuccessStatusCode) {
+                return RedirectToAction("Horses");
+            }
+
+            ModelState.AddModelError(string.Empty, "Something went wrong.");
+
+            return View(horse);
+        }
+    }
+
     [Route("/anteckningar")]
     public IActionResult Notes()
     {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hSKmDGiD20+SGqQWWKuOTvyUGcaYrxMuxmpMB2H/hLl1Go0tCFl2quNNzOWTHk5EXg2o/FxR7tXZALPH5cD7QA==",
+  "dgSpecHash": "WneBju4zYNohB7bmZkBw6g6hChwl4NAtthSAtfyJr4ZoKENXgI4bbjQANTBJ+3JynxBzy912aiVkwQDe2Majug==",
   "success": true,
   "projectFilePath": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\NET_Project.csproj",
   "expectedPackageFiles": [
@@ -86,7 +86,7 @@
     "C:\\Users\\ebbah\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\ebbah\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\ebbah\\.nuget\\packages\\netstandard.library\\1.6.1\\netstandard.library.1.6.1.nupkg.sha512",
-    "C:\\Users\\ebbah\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\ebbah\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
     "C:\\Users\\ebbah\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Users\\ebbah\\.nuget\\packages\\nuget.common\\6.3.1\\nuget.common.6.3.1.nupkg.sha512",
     "C:\\Users\\ebbah\\.nuget\\packages\\nuget.configuration\\6.3.1\\nuget.configuration.6.3.1.nupkg.sha512",

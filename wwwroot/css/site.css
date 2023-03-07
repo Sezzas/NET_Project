@@ -168,7 +168,7 @@ td {
   width: 100%;
   max-width: 700px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   column-gap: 30px;
 }
 
@@ -211,7 +211,8 @@ input[type=checkbox] {
 }
 
 select {
-  width: 317px;
+  max-width: 317px;
+  width: 100%;
 }
 
 input[type=submit] {
@@ -223,8 +224,8 @@ input[type=submit] {
 }
 
 .submit-btn {
-  align-self: flex-end;
-  padding: 0.7em;
+  align-self: flex-start;
+  padding: 0.2em;
   background-color: #e53bb9;
   color: white;
   border: none;
@@ -352,6 +353,8 @@ input[type=submit] {
 
   table {
     font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
   }
 
   .navbar-nav {
