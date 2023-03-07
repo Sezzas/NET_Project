@@ -48,4 +48,18 @@ namespace NET_Project.Models {
 
     }
 
+        public class News {
+
+        // Properties
+        public int NewsId { get; set; } // ID
+
+        [Required]
+        public string? Title { get; set; } // Title
+
+        [Required]
+        [DataType(DataType.Text)]
+        public string? Content { get; set; }  // Content
+
+    }
+
 }

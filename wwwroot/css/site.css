@@ -89,7 +89,7 @@ main img {
   max-width: 400px;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   font-family: 'Fugaz One', sans-serif;
 }
 
@@ -102,7 +102,11 @@ h3 {
   font-size: 1.4em;
 }
 
-p, i, em, strong, b {
+p, i, em, strong, b, li, .updated {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.form-floating label {
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -189,7 +193,7 @@ td {
   font-style: italic;
 }
 
-input[type=text], input[type=number], select, input[type=email], input[type=password], textarea {
+input[type=text], input[type=number], select, input[type=email], input[type=password], textarea, input[type=tel] {
   padding: 0.5em;
   width: 100%;
   max-width: 300px;
@@ -223,16 +227,16 @@ input[type=submit] {
   font-family: 'Fugaz One', sans-serif;
 }
 
-.submit-btn {
+.submit-btn, #update-profile-button, .btn-primary {
   align-self: flex-start;
   padding: 0.2em;
   background-color: #e53bb9;
-  color: white;
+  color: white !important;
   border: none;
   font-family: 'Fugaz One', sans-serif;
 }
 
-.submit-btn:hover {
+.submit-btn:hover, #update-profile-button:hover, .btn-primary:hover {
   text-decoration: underline;
   cursor: pointer;
 }
@@ -343,9 +347,33 @@ input[type=submit] {
   margin-top: 2em;
 }
 
+.sso-news {
+  background-color: #f9f4ec;
+  padding: 1em;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.sso-news h4 {
+  margin: 0;
+  color: #e53bb9;
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
+.sso-news h5 {
+  font-size: 1.2em;
+  margin: 0;
+  color: #231e1e;
+}
+
+.updated {
+  margin-top: 0.5em;
+  font-weight: bold;
+}
+
 
 /* För mobila enheter */
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   nav {
     flex-direction: column;
@@ -353,11 +381,38 @@ input[type=submit] {
 
   table {
     font-size: 0.7em;
-    display: flex;
-    flex-direction: column;
+  }
+
+  th, td {
+    width: 100%;
   }
 
   .navbar-nav {
     flex-direction: column;
   }
+}
+
+@media (max-width: 500px) {
+  
+  th {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  td {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    border: none;
+  }
+
+  td:nth-child(even) {
+    background-color: rgb(238, 238, 238);
+  }
+
+  tr {
+    border-bottom: 20px solid #ffffff;
+  }
+
 }

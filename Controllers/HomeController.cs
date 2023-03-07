@@ -15,6 +15,50 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        IEnumerable<Horse> horses = null;
+        IEnumerable<News> news = null;
+
+        // Get latest horses
+        using (var client = new HttpClient()) {
+
+            client.BaseAddress = new Uri("http://localhost:5154/api/");
+            var responseTask = client.GetAsync("horse");
+            responseTask.Wait();
+
+            var result = responseTask.Result;
+            if(result.IsSuccessStatusCode) {
+                var readTask = result.Content.ReadAsAsync<IList<Horse>>();
+
+                horses = readTask.Result.Reverse();
+            } else {
+                horses = Enumerable.Empty<Horse>();
+
+                ModelState.AddModelError(string.Empty, "Something went wrong.");
+            }
+        }
+
+        // Get latest mews
+        using (var client = new HttpClient()) {
+
+            client.BaseAddress = new Uri("http://localhost:5154/api/");
+            var responseTask = client.GetAsync("news");
+            responseTask.Wait();
+
+            var result = responseTask.Result;
+            if(result.IsSuccessStatusCode) {
+                var readTask = result.Content.ReadAsAsync<IList<News>>();
+
+                news = readTask.Result.Reverse();
+            } else {
+                news = Enumerable.Empty<News>();
+
+                ModelState.AddModelError(string.Empty, "Something went wrong.");
+            }
+        }
+
+        ViewBag.Horses = horses;
+        ViewBag.News = news;
+
         return View();
     }
 

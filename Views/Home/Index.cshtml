@@ -1,15 +1,60 @@
 ﻿@{
     ViewData["Title"] = "Startsida";
+
+    var data = ViewBag.Horses;
+    var news = ViewBag.News;
 }
 
 <h2>Välkommen!</h2>
 
 <p>Här kan du lagra information om ditt SSO-spelade och hitta hjälpsam information om spelet.</p>
 
-<h3>Senaste nyheterna</h3>
+<h3>Senaste nyheten</h3>
+@{ var y = 0; }
+@foreach(var item in news) if(y < 1) {
+    y++;
 
-<p>...</p>
+    <div class="sso-news">
+        <h4>@item.Title</h4>
+        <article>@Html.Raw(item.Content)</article>
+    </div>
+}
 
 <h3>Senast tillagda hästar</h3>
 
-<p>...</p>
+<table id="horse-table">
+
+    <!-- Table header -->
+    <thead>
+        <tr>
+            <th>Bild</th>
+            <th>Namn</th>
+            <th>Smeknamn</th>
+            <th>Kön</th>
+            <th>Ras</th>
+            <th>Level</th>
+            <th>Info</th>
+            <th>Ägare</th>
+        </tr>
+    </thead>
+
+    <!-- Loop through horses -->
+    <tbody>
+        @{ var i = 0; }
+        @foreach(var horse in data) if(i < 5) { // Stop loop after 5 horses
+            i++;
+            <tr>
+                <td></td>
+                <td>@horse.Name</td>
+                <td>@horse.Nickname</td>
+                <td>@horse.Gender</td>
+                <td>@horse.Breed</td>
+                <td>@horse.Level</td>
+                <td>@horse.Info</td>
+                <td>@horse.Owner</td>
+            </tr>
+
+        }
+    </tbody>
+
+</table>
