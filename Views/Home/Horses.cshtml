@@ -76,6 +76,7 @@
             <th>Ras</th>
             <th>Level</th>
             <th>Info</th>
+            <th></th>
         </tr>
     </thead>
 
@@ -92,6 +93,7 @@
                 <td>@horse.Breed</td>
                 <td>@horse.Level</td>
                 <td>@horse.Info</td>
+                <td>@Html.ActionLink("Radera", "Delete", new { id=horse.HorseId, category="Horse" }, new { @class="delete-btn" })</td>
             </tr>
 
         }
