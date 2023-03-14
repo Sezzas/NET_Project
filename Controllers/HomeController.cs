@@ -191,9 +191,9 @@ public class HomeController : Controller
     public IActionResult Edit(Note note)
     {
         using (var client = new HttpClient()) {
-            client.BaseAddress = new Uri("http://localhost:5154/api/note");
+            client.BaseAddress = new Uri("http://localhost:5154/api/");
 
-            var putTask = client.PutAsJsonAsync<Note>("note", note);
+            var putTask = client.PutAsJsonAsync<Note>("note/" + note.NoteId, note);
             putTask.Wait();
 
             var result = putTask.Result;
