@@ -176,7 +176,7 @@ td {
   column-gap: 30px;
 }
 
-#register-form, #login-form, #notes-form {
+#register-form, #login-form, #notes-form, form {
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -369,6 +369,13 @@ input[type=submit] {
 .updated {
   margin-top: 0.5em;
   font-weight: bold;
+}
+
+.field-validation-error {
+  color:rgb(204, 38, 38);
+  font-weight: bold;
+  font-size: 0.7em;
+  margin-left: 1em;
 }
 
 

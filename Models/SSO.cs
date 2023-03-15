@@ -8,21 +8,22 @@ namespace NET_Project.Models {
         // Properties
         public int HorseId { get; set; } // ID
 
-        [Required]
+        [Required(ErrorMessage = "Du måste ange hästens namn.")]
         public string? Name { get; set; } // Name
 
         public string? Nickname { get; set; } // Nickname
 
-        [Required]
+        [Required(ErrorMessage = "Du måste ange hästens kön.")]
         public string? Gender { get; set; } // Gender
 
-        [Required]
+        [Required(ErrorMessage = "Du måste ange hästens ras.")]
         public string? Breed { get; set; } // Breed
 
-        [Required]
-        public int Level { get; set; } // Level
+        [Required(ErrorMessage = "Du måste ange hästens level 1-15.")]
+        [Range(0, 15, ErrorMessage = "Leveln kan endast vara 1-15.")]
+        public int? Level { get; set; } // Level
 
-        [Required]
+        [Required(ErrorMessage = "Du måste ange hästens ägare.")]
         public string? Owner { get; set; } // Owner
 
         public string? Picture { get; set; } // Picture

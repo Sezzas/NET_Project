@@ -13,12 +13,13 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    // INDEX
     public IActionResult Index()
     {
         IEnumerable<Horse> horses = null;
         IEnumerable<News> news = null;
 
-        // Get latest horses
+        // Get latest horses (GET)
         using (var client = new HttpClient()) {
 
             client.BaseAddress = new Uri("http://localhost:5154/api/");
@@ -37,7 +38,7 @@ public class HomeController : Controller
             }
         }
 
-        // Get latest mews
+        // Get latest news (GET)
         using (var client = new HttpClient()) {
 
             client.BaseAddress = new Uri("http://localhost:5154/api/");
@@ -68,6 +69,7 @@ public class HomeController : Controller
         return View();
     }
 
+    // Get horses (GET)
     [Route("/dinahästar")]
     public IActionResult Horses()
     {
@@ -96,26 +98,59 @@ public class HomeController : Controller
         return View();
     }
 
+    // Save new horse (POST)
     [HttpPost("/dinahästar")]
     public IActionResult Horses(Horse horse)
     {
-        using (var client = new HttpClient()) {
+        if (ModelState.IsValid) {
+            using (var client = new HttpClient()) {
             client.BaseAddress = new Uri("http://localhost:5154/api/horse");
 
             var postTask = client.PostAsJsonAsync<Horse>("horse", horse);
             postTask.Wait();
 
             var result = postTask.Result;
+
             if(result.IsSuccessStatusCode) {
                 return RedirectToAction("Horses");
             }
 
             ModelState.AddModelError(string.Empty, "Something went wrong.");
 
+            }
+
             return View(horse);
+
+        } else {
+            IEnumerable<Horse> horses = null;
+
+            using (var client = new HttpClient()) {
+
+                client.BaseAddress = new Uri("http://localhost:5154/api/");
+                var responseTask = client.GetAsync("horse");
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if(result.IsSuccessStatusCode) {
+                    var readTask = result.Content.ReadAsAsync<IList<Horse>>();
+
+                    horses = readTask.Result;
+                } else {
+                    horses = Enumerable.Empty<Horse>();
+
+                    ModelState.AddModelError(string.Empty, "Something went wrong.");
+                }
+            }
+
+        ViewBag.Horses = horses;
+
+        return View();
+        
         }
+
     }
 
+    // Get notes (GET)
     [Route("/anteckningar")]
     public IActionResult Notes()
     {
@@ -144,6 +179,7 @@ public class HomeController : Controller
         return View();
     }
 
+    // Save new note (POST)
     [HttpPost("/anteckningar")]
     public IActionResult Notes(Note note)
     {
@@ -164,6 +200,7 @@ public class HomeController : Controller
         }
     }
 
+    // Edit note (GET with ID)
     public IActionResult Edit(int id)
     {
         Note note = null;
@@ -187,6 +224,7 @@ public class HomeController : Controller
         return View(note);
     }
 
+    // Save edited note (PUT)
     [HttpPost]
     public IActionResult Edit(Note note)
     {
@@ -205,6 +243,7 @@ public class HomeController : Controller
         return View(note);
     }
 
+    // Delete
     public IActionResult Delete(int id, string category)
     {
         using (var client = new HttpClient()) {

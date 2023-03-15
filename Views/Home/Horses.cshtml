@@ -16,13 +16,12 @@
     <div asp-validation-summary="ModelOnly"></div>
 
     <div class="form-box">
-        <label asp-for="Owner">Ditt namn:</label><br />
+        <label asp-for="Owner">Ditt namn:</label><span asp-validation-for="Owner"></span><br />
         <input asp-for="Owner"><br />
     </div>
-    <span asp-validation-for="Owner"></span>
 
     <div class="form-box">
-        <label asp-for="Name">Namn:</label><br />
+        <label asp-for="Name">Namn:</label><span asp-validation-for="Name"></span><br />
         <input asp-for="Name"><br />
     </div>
 
@@ -32,7 +31,7 @@
     </div>
 
     <div class="form-box">
-        <label asp-for="Gender">Kön:</label><br />
+        <label asp-for="Gender">Kön:</label><span asp-validation-for="Gender"></span><br />
         <select asp-for="Gender">
             <option value="Sto">Sto</option>
             <option value="Hingst">Hingst</option>
@@ -41,12 +40,12 @@
     </div>
 
     <div class="form-box">
-        <label asp-for="Breed">Ras:</label><br />
+        <label asp-for="Breed">Ras:</label><span asp-validation-for="Breed"></span><br />
         <input asp-for="Breed">
     </div>
 
     <div class="form-box">
-        <label asp-for="Level">Level:</label><br />
+        <label asp-for="Level">Level:</label><span asp-validation-for="Level"></span><br />
         <input asp-for="Level">
     </div>
 
