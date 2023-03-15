@@ -183,7 +183,7 @@ public class HomeController : Controller
     [HttpPost("/anteckningar")]
     public IActionResult Notes(Note note)
     {
-        if (ModelState.IsValid) {
+        if (ModelState.IsValid) { // If fields are correct
             using (var client = new HttpClient()) {
             client.BaseAddress = new Uri("http://localhost:5154/api/note");
 
@@ -201,7 +201,7 @@ public class HomeController : Controller
 
             }
 
-        } else {
+        } else { // GET if fields are not correct
             IEnumerable<Note> notes = null;
 
             using (var client = new HttpClient()) {
@@ -225,7 +225,7 @@ public class HomeController : Controller
             ViewBag.Notes = notes;
 
         return View();
-        
+
         }
     }
 
