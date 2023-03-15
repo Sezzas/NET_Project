@@ -38,11 +38,11 @@ namespace NET_Project.Models {
         // Properties
         public int NoteId { get; set; } // ID
 
-        [Required]
+        [Required(ErrorMessage = "Du måste ange en titel.")]
         [Display(Name = "Titel")]
         public string? Title { get; set; } // Title
 
-        [Required]
+        [Required(ErrorMessage = "Du måste ha något innehåll.")]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Anteckning")]
         public string? Content { get; set; } // Content

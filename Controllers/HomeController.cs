@@ -145,7 +145,7 @@ public class HomeController : Controller
         ViewBag.Horses = horses;
 
         return View();
-        
+
         }
 
     }
@@ -183,7 +183,8 @@ public class HomeController : Controller
     [HttpPost("/anteckningar")]
     public IActionResult Notes(Note note)
     {
-        using (var client = new HttpClient()) {
+        if (ModelState.IsValid) {
+            using (var client = new HttpClient()) {
             client.BaseAddress = new Uri("http://localhost:5154/api/note");
 
             var postTask = client.PostAsJsonAsync<Note>("note", note);
@@ -197,6 +198,34 @@ public class HomeController : Controller
             ModelState.AddModelError(string.Empty, "Something went wrong.");
 
             return View(note);
+
+            }
+
+        } else {
+            IEnumerable<Note> notes = null;
+
+            using (var client = new HttpClient()) {
+
+                client.BaseAddress = new Uri("http://localhost:5154/api/");
+                var responseTask = client.GetAsync("note");
+                responseTask.Wait();
+
+                var result = responseTask.Result;
+                if(result.IsSuccessStatusCode) {
+                    var readTask = result.Content.ReadAsAsync<IList<Note>>();
+
+                    notes = readTask.Result;
+                } else {
+                    notes = Enumerable.Empty<Note>();
+
+                    ModelState.AddModelError(string.Empty, "Something went wrong.");
+                }
+            }
+
+            ViewBag.Notes = notes;
+
+        return View();
+        
         }
     }
 

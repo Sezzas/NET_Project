@@ -17,15 +17,13 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-box">
-        @Html.LabelFor(model => model.Title) <br />
+        @Html.LabelFor(model => model.Title) @Html.ValidationMessageFor(model => model.Title, "", new { @class = "field-validation-error" })<br />
         @Html.EditorFor(model => model.Title)
-        @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
     </div>
 
     <div class="form-box">
-        @Html.LabelFor(model => model.Content) <br />
+        @Html.LabelFor(model => model.Content) @Html.ValidationMessageFor(model => model.Content, "", new { @class = "field-validation-error" })<br />
         @Html.EditorFor(model => model.Content)
-        @Html.ValidationMessageFor(model => model.Content, "", new { @class = "text-danger" })
     </div>
 
         <div class="form-box">

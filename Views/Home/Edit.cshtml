@@ -14,12 +14,12 @@
     @Html.HiddenFor(model => model.NoteId)
 
     <div class="form-box">
-        @Html.LabelFor(model => model.Title) <br />
+        @Html.LabelFor(model => model.Title) @Html.ValidationMessageFor(model => model.Title, "", new { @class = "field-validation-error" })<br />
         @Html.EditorFor(model => model.Title)
     </div>
 
     <div class="form-box">
-        @Html.LabelFor(model => model.Content) <br />
+        @Html.LabelFor(model => model.Content) @Html.ValidationMessageFor(model => model.Content, "", new { @class = "field-validation-error" })<br />
         @Html.EditorFor(model => model.Content)
     </div>
 
