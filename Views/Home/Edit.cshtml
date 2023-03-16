@@ -1,7 +1,13 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     @model NET_Project.Models.Note;
     ViewData["Title"] = "Ändra anteckning";
 }
+
+@if (SignInManager.IsSignedIn(User)) { // Only show if logged in
 
 <h2>Ändra anteckning</h2>
 
@@ -26,6 +32,8 @@
     <div class="form-box">
         <input type="submit" value="Spara ändringar" class="submit-btn">
     </div>
+
+}
 
 }
 

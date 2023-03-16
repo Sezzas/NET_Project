@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BSDuIIrBL8gpJak2SHgOUcT3yePwM3Uq+fI3o2nxhUk=",
+  "Hash": "fwIhk347txiZK+XMtJNIPM9W3MA5QDU+oBPbNPVBVNc=",
   "Source": "NET_Project",
   "BasePath": "_content/NET_Project",
   "Mode": "Default",
@@ -1120,6 +1120,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\header.png"
+    },
+    {
+      "Identity": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\imageupload\\no-img.png",
+      "SourceId": "NET_Project",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\",
+      "BasePath": "_content/NET_Project",
+      "RelativePath": "imageupload/no-img.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\imageupload\\no-img.png"
     },
     {
       "Identity": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\js\\site.js",

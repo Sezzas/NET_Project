@@ -103,6 +103,7 @@ public class HomeController : Controller
     public IActionResult Horses(Horse horse)
     {
         if (ModelState.IsValid) {
+
             using (var client = new HttpClient()) {
             client.BaseAddress = new Uri("http://localhost:5154/api/horse");
 
@@ -270,6 +271,49 @@ public class HomeController : Controller
         }
 
         return View(note);
+    }
+
+    // Edit horse (GET with ID)
+    public IActionResult HorseEdit(int id)
+    {
+        Horse horse = null;
+
+        using (var client = new HttpClient()) {
+            client.BaseAddress = new Uri("http://localhost:5154/api/horse/");
+
+            var responseTask = client.GetAsync(id.ToString());
+            responseTask.Wait();
+
+            var result = responseTask.Result;
+
+            if(result.IsSuccessStatusCode) {
+                var readTask = result.Content.ReadAsAsync<Horse>();
+                readTask.Wait();
+
+                horse = readTask.Result;
+            }
+        }
+
+        return View(horse);
+    }
+
+    // Save edited horse (PUT)
+    [HttpPost]
+    public IActionResult HorseEdit(Horse horse)
+    {
+        using (var client = new HttpClient()) {
+            client.BaseAddress = new Uri("http://localhost:5154/api/");
+
+            var putTask = client.PutAsJsonAsync<Horse>("horse/" + horse.HorseId, horse);
+            putTask.Wait();
+
+            var result = putTask.Result;
+            if(result.IsSuccessStatusCode) {
+                return RedirectToAction("Horses");
+            }
+        }
+
+        return View(horse);
     }
 
     // Delete

@@ -4,25 +4,21 @@
 
 @{
     @model NET_Project.Models.Horse;
-    ViewData["Title"] = "Dina hästar";
-
-    var data = ViewBag.Horses;
+    ViewData["Title"] = "Ändra häst";
 }
 
 @if (SignInManager.IsSignedIn(User)) { // Only show if logged in
 
-<h2>Dina hästar</h2>
+<h2>Ändra häst</h2>
 
-<p>Här kan du lagra information om dina hästar!</p>
-
-<h2>Lägg till häst</h2>
-<!-- Formulär för att lägga till hästar -->
 <form method="post" id="horse-form">
 
     <div asp-validation-summary="ModelOnly"></div>
 
+    @Html.HiddenFor(model => model.HorseId)
+
     <div class="form-box">
-        <label asp-for="Owner">Ditt namn:</label><span asp-validation-for="Owner"></span><br />
+        <label asp-for="Owner">Ägares namn:</label><span asp-validation-for="Owner"></span><br />
         <input asp-for="Owner"><br />
     </div>
 
@@ -64,51 +60,7 @@
         <input type="submit" value="Lägg till" class="submit-btn">
     </div>
 
-</form><br />
-
-<h2>Lagrade hästar</h2>
-<!-- Table to print horses -->
-<table id="horse-table">
-
-    <!-- Table header -->
-    <thead>
-        <tr>
-            <th>Nummer</th>
-            <th>Bild</th>
-            <th>Namn</th>
-            <th>Smeknamn</th>
-            <th>Kön</th>
-            <th>Ras</th>
-            <th>Level</th>
-            <th>Info</th>
-            <th></th>
-        </tr>
-    </thead>
-
-    <!-- Loop through horses -->
-    <tbody>
-        @foreach(var horse in data) {
-
-            var imgsrc = "./wwwroot/imageupload/" + horse.Picture;
-
-            <tr>
-                <td>@horse.HorseId</td>
-                <td><img src="~/imageupload/no-img.png" alt="Ingen bild" class="img-mini" /></td>
-                <td>@horse.Name</td>
-                <td>@horse.Nickname</td>
-                <td>@horse.Gender</td>
-                <td>@horse.Breed</td>
-                <td>@horse.Level</td>
-                <td>@horse.Info</td>
-                <td>
-                    @Html.ActionLink("Ändra", "HorseEdit", new { id=horse.HorseId }, new { @class="edit-btn" })
-                    @Html.ActionLink("Radera", "Delete", new { id=horse.HorseId, category="Horse" }, new { @class="delete-btn" })
-                </td>
-            </tr>
-
-        }
-    </tbody>
-
-</table>
+</form>
 
 }
+

@@ -378,9 +378,14 @@ input[type=submit] {
   margin-left: 1em;
 }
 
+.img-mini {
+  max-width: 50px;
+  width: 100%;
+}
+
 
 /* För mobila enheter */
-@media (max-width: 700px) {
+@media (max-width: 780px) {
 
   nav {
     flex-direction: column;
@@ -405,6 +410,7 @@ input[type=submit] {
     display: flex;
     flex-direction: column;
     width: 100%;
+    border-bottom: 2px solid rgb(207, 41, 166);
   }
 
   td {
@@ -412,6 +418,7 @@ input[type=submit] {
     flex-direction: column;
     padding: 0.5em;
     border: none;
+    min-height: 1em;
   }
 
   td:nth-child(even) {
@@ -420,6 +427,10 @@ input[type=submit] {
 
   tr {
     border-bottom: 20px solid #ffffff;
+  }
+
+  .img-mini {
+    margin: auto;
   }
 
 }

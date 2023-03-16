@@ -1,9 +1,15 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     @model NET_Project.Models.Note
     ViewData["Title"] = "Anteckningar";
 
     var data = ViewBag.Notes;
 }
+
+@if (SignInManager.IsSignedIn(User)) { // Only show if logged in
 
 <h2>Anteckningar</h2>
 
@@ -45,5 +51,7 @@
             @Html.ActionLink("Radera", "Delete", new { id=note.NoteId, category="Note" }, new { @class="delete-btn" })
         </div>
     </div>
+
+}
 
 }

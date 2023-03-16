@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\header.png"
     },
     {
+      "Id": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\imageupload\\no-img.png",
+      "PackagePath": "staticwebassets\\imageupload\\no-img.png"
+    },
+    {
       "Id": "C:\\Users\\ebbah\\Dropbox\\WEBBUTVECKLING-PROGRAMMET\\Kod\\Webbutveckling med .NET\\NET_Project\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
